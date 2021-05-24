@@ -1,6 +1,6 @@
 # react-better-slider
 
-A simple slider component wchich provides you better features like **disabling** input upto a value.
+A simple slider component which provides you better features like **disabling** input upto a value.
 
 ## Installation
 
@@ -15,7 +15,14 @@ import React from "react";
 import BetterSlider from "react-better-slider";
 
 const DemoApp: React.FC = () => {
-  return <Slider />;
+  const [value, setValue] = useState(0);
+  return (
+    <Slider
+      disabledPosition={24}
+      value={value}
+      onChange={(newResponse: number) => setValue(newResponse)}
+    />
+  );
 };
 
 export default DemoApp;
